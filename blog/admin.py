@@ -1,5 +1,5 @@
 from django.contrib import admin
-from blog.models import Tag, Post
+from blog.models import Tag, Post, Comment
 
 # Registrar Tag con configuración predeterminada
 admin.site.register(Tag)
@@ -9,5 +9,6 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     list_display = ('slug', 'published_at')
 
-# Registrar Post con la configuración personalizada
+# Register your models here.
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment)
